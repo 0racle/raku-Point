@@ -13,32 +13,34 @@ Internally, the values are stored as native `num`'s for speed, as well as allowi
 
 Like `Tuple`, the `Point` is a value type, so `Point` objects will behave inside data structures such as `Set`.
 
-    use Point; # exports a 'point' sub
+```perl6
+use Point; # exports a 'point' sub
 
-    # zero-arg call initialises point at (0, 0);
-    say point();  # (0, 0)
+# zero-arg call initialises point at (0, 0);
+say point();  # (0, 0)
 
-    my $p = point(1,  1);
-    my $q = point(2, -3);
+my $p = point(1,  1);
+my $q = point(2, -3);
 
-    # addition between points returns a new point
-    say $p + $q;  # (3, -2)
+# addition between points returns a new point
+say $p + $q;  # (3, -2)
 
-    # point values will behave inside a Set
-    say set($p, $p, $q);  # set((1, 1) (2, -3))
+# point values will behave inside a Set
+say set($p, $p, $q);  # set((1, 1) (2, -3))
 
-    # maybe these subs will be included with the module in future?
+# maybe these subs will be included with the module in future?
 
-    sub cityblock-distance($p, $q = point()) {
-        abs($p.x + $q.x) + abs($p.y + $q.y)
-    }
+sub cityblock-distance($p, $q = point()) {
+    abs($p.x + $q.x) + abs($p.y + $q.y)
+}
 
-    sub euclidean-distance($p, $q) {
-        (($p.x - $q.x)² + ($p.y - $q.y)²) ** 0.5
-    }
+sub euclidean-distance($p, $q) {
+    (($p.x - $q.x)² + ($p.y - $q.y)²) ** 0.5
+}
 
-    say cityblock-distance($p, $q);  # 5 
-    say euclidean-distance($p, $q);  # 4.123105625617661 
+say cityblock-distance($p, $q);  # 5 
+say euclidean-distance($p, $q);  # 4.123105625617661 
+```
 
 
 CAVEATS
