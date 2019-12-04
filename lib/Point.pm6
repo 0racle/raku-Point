@@ -14,12 +14,23 @@ class Point {
     method list {   $!x, $!y   }
 
     proto method new(|) {*}
+
+    # zero
     multi method new() {
         nqp::create(self)!SET-SELF(0, 0)
     }
+
+    # positional
     multi method new(Real \x, Real \y) {
         nqp::create(self)!SET-SELF(x, y)
     }
+
+    # list
+    multi method new(@ [Real \x, Real \y]) {
+        nqp::create(self)!SET-SELF(x, y)
+    }
+
+    # named
     multi method new(Real :$x!, Real :$y!) {
         nqp::create(self)!SET-SELF($x, $y)
     }
