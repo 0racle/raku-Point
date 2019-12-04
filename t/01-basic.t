@@ -19,6 +19,6 @@ is $p + $q, point(3, -2), 'addition';
 
 is point(), point(0, 0), 'zero-arg';
 
-is set(point(1, 1), point(1, 1), point(1, 2)).keys, (point(1,1), point(1, 2)), 'objat';
+is set(point(1, 1), point(1, 1), point(1, 2)).keys.sort, (point(1,1), point(1, 2)), 'objat';
 
 # vim: ft=perl6

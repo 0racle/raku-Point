@@ -1,6 +1,6 @@
 {
    "name" : "Point",
-   "version" : "0.0.2",
+   "version" : "0.0.3",
    "description" : "Point class",
    "perl" : "6.c",
    "authors" : [ "Joshua Yeshouroun" ],
