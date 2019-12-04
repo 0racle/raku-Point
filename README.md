@@ -30,11 +30,11 @@ Like `Tuple`, the `Point` is a value type, so `Point` objects will behave inside
     # maybe these subs will be included with the module in future?
 
     sub cityblock-distance($p, $q = point()) {
-	abs($p.x + $q.x) + abs($p.y + $q.y)
+        abs($p.x + $q.x) + abs($p.y + $q.y)
     }
 
     sub euclidean-distance($p, $q) {
-	(($p.x - $q.x)² + ($p.y - $q.y)²) ** 0.5
+        (($p.x - $q.x)² + ($p.y - $q.y)²) ** 0.5
     }
 
     say cityblock-distance($p, $q);  # 5 
