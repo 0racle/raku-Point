@@ -16,9 +16,6 @@ Like `Tuple`, the `Point` is a value type, so `Point` objects will behave inside
 ```perl6
 use Point; # exports a 'point' sub
 
-# zero-arg call initialises point at (0, 0);
-say point();  # (0, 0)
-
 my $p = point(1,  1);
 my $q = point(2, -3);
 
@@ -30,11 +27,11 @@ say set($p, $p, $q);  # set((1, 1) (2, -3))
 
 # maybe these subs will be included with the module in future?
 
-sub cityblock-distance($p, $q = point()) {
+sub cityblock-distance($p, $q = point(0, 0)) {
     abs($p.x + $q.x) + abs($p.y + $q.y)
 }
 
-sub euclidean-distance($p, $q) {
+sub euclidean-distance($p, $q = point(0, 0)) {
     (($p.x - $q.x)² + ($p.y - $q.y)²) ** 0.5
 }
 

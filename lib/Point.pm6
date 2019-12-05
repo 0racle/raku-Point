@@ -1,5 +1,6 @@
+use nqp;
+
 class Point {
-    use nqp;
     has num $.x;
     has num $.y;
 
@@ -13,26 +14,8 @@ class Point {
     method gist { "($!x, $!y)" }
     method list {   $!x, $!y   }
 
-    proto method new(|) {*}
-
-    # zero
-    multi method new() {
-        nqp::create(self)!SET-SELF(0, 0)
-    }
-
-    # positional
-    multi method new(Real \x, Real \y) {
+    method new(Real \x, Real \y) {
         nqp::create(self)!SET-SELF(x, y)
-    }
-
-    # list
-    multi method new(@ [Real \x, Real \y]) {
-        nqp::create(self)!SET-SELF(x, y)
-    }
-
-    # named
-    multi method new(Real :$x!, Real :$y!) {
-        nqp::create(self)!SET-SELF($x, $y)
     }
 
     multi method WHICH(Point:D:) {
@@ -43,10 +26,10 @@ class Point {
     }
 }
 
-multi infix:<+> (Point $a, Point $b) is export {
-    Point.new($a.x + $b.x, $a.y + $b.y)
+multi infix:<+> (Point \a, Point \b) is export {
+    Point.new(nqp::add_n(a.x, b.x), nqp::add_n(a.y, b.y))
 }
 
-sub point(|c) is export {
-    Point.new(|c)
+sub point(\x, \y) is export {
+    Point.new(x, y)
 }
