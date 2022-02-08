@@ -1,9 +1,9 @@
 {
    "name" : "Point",
-   "version" : "1.0.1",
+   "version" : "1.2.0",
    "description" : "Point class",
-   "perl" : "6.c",
-   "authors" : [ "Joshua Yeshouroun" ],
+   "perl" : "6.d",
+   "authors" : [ "elcaro" ],
    "provides" : {
       "Point" : "lib/Point.pm6"
    },
