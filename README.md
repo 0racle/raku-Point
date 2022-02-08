@@ -41,9 +41,14 @@ say euclidean-distance($p, $q);  # 4.123105625617661
 
 An addition (`+`) infix op is exported to support addition of points.
 
-From Version 1.2.0, infix ops are also exported for subtraction (`-` and `−`), multipliction (`*` and `×`), and division (`/`,  `÷`), as well as unary prefix negation.
+From Version 1.2.0, infix ops are also exported for
+  * subtraction (infix `-` and `−`)
+  * multipliction (infix `*` and `×`)
+  * division (infix `/`,  `÷`)
 
-Here's a simple Eclidean vector implementations using some of those features
+... as well as unary prefix negation.
+
+Here's a simple Eclidean vector implementation using some of those features
 
 ```raku
 use Point;
