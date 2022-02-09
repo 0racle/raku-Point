@@ -1,8 +1,9 @@
 {
    "name" : "Point",
-   "version" : "1.2.0",
+   "version" : "1.2.1",
    "description" : "Point class",
-   "perl" : "6.d",
+   "perl" : "6.c",
+   "auth" : "zef:elcaro",
    "authors" : [ "elcaro" ],
    "provides" : {
       "Point" : "lib/Point.pm6"

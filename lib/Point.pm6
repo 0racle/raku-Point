@@ -1,6 +1,6 @@
 use nqp;
 
-class Point:ver<1.2.0>:auth<zef:elcaro> {
+class Point:ver<1.2.1>:auth<zef:elcaro> {
     has num $.x;
     has num $.y;
 
