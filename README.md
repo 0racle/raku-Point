@@ -28,7 +28,7 @@ say set($p, $p, $q);  # set((1, 1) (2, -3))
 # maybe these subs will be included with the module in future?
 
 sub cityblock-distance($p, $q = point(0, 0)) {
-    abs($p.x + $q.x) + abs($p.y + $q.y)
+    abs($p.x - $q.x) + abs($p.y - $q.y)
 }
 
 sub euclidean-distance($p, $q = point(0, 0)) {
